@@ -41,7 +41,7 @@ public class PreviewFeaturesDemo {
         // 在try-with-resources中的应用概念
         System.out.println("\ntry-with-resources中的未命名变量概念:");
         System.out.println("try (var _ = acquireResource()) {");
-        System.out.println("    // 资源会自动关闭，但我们不需要使用它");
+        System.out.println("    // 资源会自动关闭，但们不需要使用它");
         System.out.println("    performOperation();");
         System.out.println("}");
         
@@ -50,7 +50,7 @@ public class PreviewFeaturesDemo {
         System.out.println("try {");
         System.out.println("    riskyOperation();");
         System.out.println("} catch (Exception _) {");
-        System.out.println("    // 我们知道有异常，但不需要使用异常对象");
+        System.out.println("    // 们知道有异常，但不需要使用异常对象");
         System.out.println("    System.out.println(\"操作失败，使用默认处理\");");
         System.out.println("}");
     }
