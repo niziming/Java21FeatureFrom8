@@ -19,7 +19,7 @@ public class CollectionsDemo {
      * 不可变集合演示 (Java 9特性)
      * List.of(), Set.of(), Map.of()等工厂方法
      */
-    @Java9Feature(value = "不可变集合工厂方法", description = "List.of(), Set.of(), Map.of()等便捷的不可变集合创建方法")
+    @Java9Feature(value = "不可变集合工厂方法", desc = "List.of(), Set.of(), Map.of()等便捷的不可变集合创建方法")
     public static void demonstrateImmutableCollections() {
         System.out.println("=== 可变集合演示 ===");
         ArrayList<String> arrs = new ArrayList<>();
@@ -83,7 +83,7 @@ public class CollectionsDemo {
      * 集合便利方法演示 (Java 8特性)
      * forEach, removeIf, replaceAll等方法
      */
-    @Java8Feature(value = "集合便利方法", description = "forEach, removeIf, replaceAll等便利的集合操作方法")
+    @Java8Feature(value = "集合便利方法", desc = "forEach, removeIf, replaceAll等便利的集合操作方法")
     public static void demonstrateConvenienceMethods() {
         System.out.println("\n=== 集合便利方法演示 ===");
         
@@ -138,7 +138,7 @@ public class CollectionsDemo {
      * ConcurrentHashMap增强演示 (Java 8特性)
      * 新的并发安全方法
      */
-    @Java8Feature(value = "ConcurrentHashMap增强", description = "新增并发安全的批量操作方法")
+    @Java8Feature(value = "ConcurrentHashMap增强", desc = "新增并发安全的批量操作方法")
     public void demonstrateConcurrentHashMapEnhancements() {
         System.out.println("\n=== ConcurrentHashMap增强演示 ===");
         
@@ -174,7 +174,7 @@ public class CollectionsDemo {
      * 集合工厂方法增强演示 (Java 11特性)
      * toArray()方法的改进
      */
-    @Java11Feature(value = "toArray方法增强", description = "Collection接口新增toArray(IntFunction)方法，简化数组转换")
+    @Java11Feature(value = "toArray方法增强", desc = "Collection接口新增toArray(IntFunction)方法，简化数组转换")
     public void demonstrateToArrayEnhancement() {
         System.out.println("\n=== toArray方法增强演示 ===");
         
@@ -198,7 +198,7 @@ public class CollectionsDemo {
      * Stream集合操作演示 (Java 8特性)
      * 展示集合与Stream的结合使用
      */
-    @Java8Feature(value = "Stream集合操作", description = "集合与Stream API的结合，提供函数式数据处理能力")
+    @Java8Feature(value = "Stream集合操作", desc = "集合与Stream API的结合，提供函数式数据处理能力")
     public void demonstrateStreamCollectionOperations() {
         System.out.println("\n=== Stream集合操作演示 ===");
         
@@ -246,7 +246,7 @@ public class CollectionsDemo {
      * 集合比较和排序演示 (Java 8特性)
      * Comparator接口的增强
      */
-    @Java8Feature(value = "Comparator增强", description = "Comparator接口新增多种便利的比较和排序方法")
+    @Java8Feature(value = "Comparator增强", desc = "Comparator接口新增多种便利的比较和排序方法")
     public void demonstrateComparatorEnhancements() {
         System.out.println("\n=== Comparator增强演示 ===");
         

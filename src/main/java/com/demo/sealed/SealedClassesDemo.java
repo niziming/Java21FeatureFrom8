@@ -12,7 +12,7 @@ public class SealedClassesDemo {
      * 基础密封类演示 (Java 17特性)
      * 密封类限制继承层次结构
      */
-    @Java17Feature(value = "密封类", description = "限制类的继承层次，只允许指定的类进行继承")
+    @Java17Feature(value = "密封类", desc = "限制类的继承层次，只允许指定的类进行继承")
     public void demonstrateBasicSealedClasses() {
         System.out.println("=== 基础密封类演示 ===");
         
@@ -66,7 +66,7 @@ public class SealedClassesDemo {
      * 密封接口演示 (Java 17特性)
      * 密封接口限制实现类
      */
-    @Java17Feature(value = "密封接口", description = "限制接口的实现类，提供更好的类型安全")
+    @Java17Feature(value = "密封接口", desc = "限制接口的实现类，提供更好的类型安全")
     public void demonstrateSealedInterfaces() {
         System.out.println("\n=== 密封接口演示 ===");
         
@@ -114,7 +114,7 @@ public class SealedClassesDemo {
      * 复杂密封类层次演示
      * 展示多层密封类结构
      */
-    @Java17Feature(value = "复杂密封类层次", description = "展示多层密封类结构和组合使用")
+    @Java17Feature(value = "复杂密封类层次", desc = "展示多层密封类结构和组合使用")
     public void demonstrateComplexSealedHierarchy() {
         System.out.println("\n=== 复杂密封类层次演示 ===");
         
@@ -128,7 +128,7 @@ public class SealedClassesDemo {
         
         System.out.println("车辆信息:");
         for (Vehicle vehicle : vehicles) {
-            System.out.println("  " + getVehicleDescription(vehicle));
+            System.out.println("  " + getVehicledesc(vehicle));
         }
         
         System.out.println("\n车辆分类:");
@@ -140,7 +140,7 @@ public class SealedClassesDemo {
     /**
      * 获取车辆描述
      */
-    private String getVehicleDescription(Vehicle vehicle) {
+    private String getVehicledesc(Vehicle vehicle) {
         return switch (vehicle) {
             case Car c -> String.format("汽车: %s %s，%d个座位", c.brand(), c.model(), c.seats());
             case Motorcycle m -> String.format("摩托车: %s %s，%s边车", 
@@ -175,7 +175,7 @@ public class SealedClassesDemo {
     /**
      * 密封类与Record结合演示
      */
-    @Java17Feature(value = "密封类与Record结合", description = "密封类与Record的结合使用，创建类型安全的数据结构")
+    @Java17Feature(value = "密封类与Record结合", desc = "密封类与Record的结合使用，创建类型安全的数据结构")
     public void demonstrateSealedWithRecords() {
         System.out.println("\n=== 密封类与Record结合演示 ===");
         

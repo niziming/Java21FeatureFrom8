@@ -18,5 +18,5 @@ public @interface Java21Feature {
     /**
      * 详细说明
      */
-    String description() default "";
+    String desc() default "";
 }

@@ -18,7 +18,7 @@ public class IODemo {
      * Files类增强演示 (Java 8特性)
      * Files类提供了丰富的文件操作方法
      */
-    @Java8Feature(value = "Files类增强", description = "Files类提供便捷的文件操作方法，支持Path API")
+    @Java8Feature(value = "Files类增强", desc = "Files类提供便捷的文件操作方法，支持Path API")
     public void demonstrateFilesEnhancements() {
         System.out.println("=== Files类增强演示 ===");
         
@@ -79,7 +79,7 @@ public class IODemo {
      * Stream文件操作演示 (Java 8特性)
      * 使用Stream处理文件内容
      */
-    @Java8Feature(value = "Stream文件操作", description = "使用Stream API处理文件内容，支持大文件高效处理")
+    @Java8Feature(value = "Stream文件操作", desc = "使用Stream API处理文件内容，支持大文件高效处理")
     public void demonstrateStreamFileOperations() {
         System.out.println("\n=== Stream文件操作演示 ===");
         
@@ -148,7 +148,7 @@ public class IODemo {
      * 目录遍历演示 (Java 8特性)
      * 使用Files.walk()和Files.find()遍历目录
      */
-    @Java8Feature(value = "目录遍历", description = "使用Stream API遍历目录结构，支持过滤和查找")
+    @Java8Feature(value = "目录遍历", desc = "使用Stream API遍历目录结构，支持过滤和查找")
     public void demonstrateDirectoryTraversal() {
         System.out.println("\n=== 目录遍历演示 ===");
         
@@ -245,7 +245,7 @@ public class IODemo {
      * NIO.2路径操作演示 (Java 8特性)
      * Path API的使用
      */
-    @Java8Feature(value = "Path API", description = "NIO.2的Path API提供更好的路径操作支持")
+    @Java8Feature(value = "Path API", desc = "NIO.2的Path API提供更好的路径操作支持")
     public void demonstratePathOperations() {
         System.out.println("\n=== Path API操作演示 ===");
         
@@ -297,7 +297,7 @@ public class IODemo {
      * 文件监控演示 (Java 8特性)
      * 使用WatchService监控文件系统变化
      */
-    @Java8Feature(value = "文件监控", description = "WatchService提供文件系统变化监控功能")
+    @Java8Feature(value = "文件监控", desc = "WatchService提供文件系统变化监控功能")
     public void demonstrateFileWatching() {
         System.out.println("\n=== 文件监控演示 ===");
         
@@ -377,7 +377,7 @@ public class IODemo {
      * 内存映射文件演示 (Java 8特性)
      * 使用内存映射进行高效文件I/O
      */
-    @Java8Feature(value = "内存映射文件", description = "使用内存映射文件进行高效的大文件处理")
+    @Java8Feature(value = "内存映射文件", desc = "使用内存映射文件进行高效的大文件处理")
     public void demonstrateMemoryMappedFiles() {
         System.out.println("\n=== 内存映射文件演示 ===");
         
@@ -467,7 +467,7 @@ public class IODemo {
      * 文件属性和权限演示 (Java 8特性)
      * 文件属性查看和权限管理
      */
-    @Java8Feature(value = "文件属性管理", description = "文件属性查看和权限管理功能")
+    @Java8Feature(value = "文件属性管理", desc = "文件属性查看和权限管理功能")
     public void demonstrateFileAttributes() {
         System.out.println("\n=== 文件属性和权限演示 ===");
         

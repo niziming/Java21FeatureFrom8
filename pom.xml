@@ -6,12 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.demo</groupId>
-    <artifactId>java-versions-comparison</artifactId>
+    <artifactId>Java21FeatureFrom8</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Java版本对比演示项目</name>
-    <description>Java 8 与 Java 21 特性对比演示项目</description>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

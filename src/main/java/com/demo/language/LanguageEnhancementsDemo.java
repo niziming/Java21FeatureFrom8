@@ -14,7 +14,7 @@ public class LanguageEnhancementsDemo {
      * Lambda表达式和函数式接口演示 (Java 8特性)
      * Lambda表达式是Java 8引入的重要特性
      */
-    @Java8Feature(value = "Lambda表达式", description = "函数式编程支持，简化匿名函数的编写")
+    @Java8Feature(value = "Lambda表达式", desc = "函数式编程支持，简化匿名函数的编写")
     public void demonstrateLambdaExpressions() {
         System.out.println("=== Lambda表达式演示 ===");
         
@@ -48,7 +48,7 @@ public class LanguageEnhancementsDemo {
      * 方法引用演示 (Java 8特性)
      * 方法引用是Lambda表达式的简化形式
      */
-    @Java8Feature(value = "方法引用", description = "Lambda表达式的简化形式，直接引用已存在的方法")
+    @Java8Feature(value = "方法引用", desc = "Lambda表达式的简化形式，直接引用已存在的方法")
     public void demonstrateMethodReferences() {
         System.out.println("\n=== 方法引用演示 ===");
         
@@ -72,7 +72,7 @@ public class LanguageEnhancementsDemo {
      * Optional类演示 (Java 8特性)
      * Optional用于避免空指针异常
      */
-    @Java8Feature(value = "Optional类", description = "避免空指针异常的容器类")
+    @Java8Feature(value = "Optional类", desc = "避免空指针异常的容器类")
     public void demonstrateOptional() {
         System.out.println("\n=== Optional类演示 ===");
         
@@ -104,7 +104,7 @@ public class LanguageEnhancementsDemo {
      * 接口默认方法演示 (Java 8特性)
      * 接口可以包含默认实现的方法
      */
-    @Java8Feature(value = "接口默认方法", description = "接口中可以定义有默认实现的方法")
+    @Java8Feature(value = "接口默认方法", desc = "接口中可以定义有默认实现的方法")
     public interface ProcessorInterface {
         // 抽象方法
         void process(String data);
@@ -152,7 +152,7 @@ public class LanguageEnhancementsDemo {
      * var关键字演示 (Java 11特性)
      * 局部变量类型推断
      */
-    @Java11Feature(value = "var关键字", description = "局部变量类型推断，编译器自动推断变量类型")
+    @Java11Feature(value = "var关键字", desc = "局部变量类型推断，编译器自动推断变量类型")
     public void demonstrateVarKeyword() {
         System.out.println("\n=== var关键字演示 ===");
         
@@ -175,7 +175,7 @@ public class LanguageEnhancementsDemo {
      * instanceof模式匹配演示 (Java 17特性)
      * instanceof操作符支持模式匹配
      */
-    @Java17Feature(value = "instanceof模式匹配", description = "instanceof操作符支持模式匹配，自动类型转换")
+    @Java17Feature(value = "instanceof模式匹配", desc = "instanceof操作符支持模式匹配，自动类型转换")
     public void demonstrateInstanceofPatternMatching() {
         System.out.println("\n=== instanceof模式匹配演示 ===");
         
@@ -204,7 +204,7 @@ public class LanguageEnhancementsDemo {
      * 字符串模板演示 (Java 21预览特性)
      * 字符串插值功能
      */
-    @Java21Feature(value = "字符串模板", description = "字符串插值功能，更方便的字符串格式化")
+    @Java21Feature(value = "字符串模板", desc = "字符串插值功能，更方便的字符串格式化")
     public void demonstrateStringTemplates() {
         System.out.println("\n=== 字符串模板演示 (预览特性) ===");
         
@@ -225,7 +225,7 @@ public class LanguageEnhancementsDemo {
      * switch表达式演示 (Java 17正式特性)
      * 增强的switch语句，支持表达式形式
      */
-    @Java17Feature(value = "switch表达式", description = "增强的switch语句，支持表达式形式和箭头语法")
+    @Java17Feature(value = "switch表达式", desc = "增强的switch语句，支持表达式形式和箭头语法")
     public void demonstrateSwitchExpressions() {
         System.out.println("\n=== switch表达式演示 ===");
         
@@ -261,7 +261,7 @@ public class LanguageEnhancementsDemo {
         System.out.println("新式switch表达式: " + newDayName);
         
         // 复杂switch表达式
-        String seasonDescription = switch (dayNumber % 4) {
+        String seasondesc = switch (dayNumber % 4) {
             case 0 -> {
                 String season = "冬季";
                 yield season + " - 寒冷的季节";
@@ -280,7 +280,7 @@ public class LanguageEnhancementsDemo {
             }
             default -> "未知季节";
         };
-        System.out.println("季节描述: " + seasonDescription);
+        System.out.println("季节描述: " + seasondesc);
     }
 
     /**

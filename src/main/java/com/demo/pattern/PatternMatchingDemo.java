@@ -12,7 +12,7 @@ public class PatternMatchingDemo {
      * instanceof模式匹配演示 (Java 17特性)
      * instanceof操作符支持模式匹配和类型转换
      */
-    @Java17Feature(value = "instanceof模式匹配", description = "instanceof支持模式匹配，自动进行类型转换")
+    @Java17Feature(value = "instanceof模式匹配", desc = "instanceof支持模式匹配，自动进行类型转换")
     public void demonstrateInstanceofPatternMatching() {
         System.out.println("=== instanceof模式匹配演示 ===");
         
@@ -73,7 +73,7 @@ public class PatternMatchingDemo {
      * switch表达式增强演示 (Java 17特性)
      * switch支持更复杂的模式匹配
      */
-    @Java17Feature(value = "switch表达式增强", description = "switch表达式支持更灵活的模式匹配")
+    @Java17Feature(value = "switch表达式增强", desc = "switch表达式支持更灵活的模式匹配")
     public void demonstrateSwitchExpressions() {
         System.out.println("\n=== switch表达式增强演示 ===");
         
@@ -113,7 +113,7 @@ public class PatternMatchingDemo {
      * Record模式匹配演示 (Java 21预览特性)
      * 对Record进行解构和匹配
      */
-    @Java21Feature(value = "Record模式匹配", description = "对Record类型进行解构和模式匹配")
+    @Java21Feature(value = "Record模式匹配", desc = "对Record类型进行解构和模式匹配")
     public void demonstrateRecordPatternMatching() {
         System.out.println("\n=== Record模式匹配演示 (概念展示) ===");
         
@@ -167,7 +167,7 @@ public class PatternMatchingDemo {
      * 嵌套模式匹配演示 (Java 21预览特性)
      * 展示复杂的嵌套结构模式匹配
      */
-    @Java21Feature(value = "嵌套模式匹配", description = "支持对复杂嵌套结构进行模式匹配")
+    @Java21Feature(value = "嵌套模式匹配", desc = "支持对复杂嵌套结构进行模式匹配")
     public void demonstrateNestedPatternMatching() {
         System.out.println("\n=== 嵌套模式匹配演示 (概念展示) ===");
         
@@ -214,7 +214,7 @@ public class PatternMatchingDemo {
      * 守卫条件演示 (Java 21预览特性)
      * 模式匹配中的条件约束
      */
-    @Java21Feature(value = "守卫条件", description = "模式匹配中支持when子句进行条件约束")
+    @Java21Feature(value = "守卫条件", desc = "模式匹配中支持when子句进行条件约束")
     public void demonstrateGuardConditions() {
         System.out.println("\n=== 守卫条件演示 (概念展示) ===");
         

@@ -14,7 +14,7 @@ public class PreviewFeaturesDemo {
      * 未命名变量和模式演示 (Java 21预览特性)
      * 使用下划线(_)表示不使用的变量
      */
-    @Java21Feature(value = "未命名变量和模式", description = "使用下划线表示不使用的变量，提高代码可读性")
+    @Java21Feature(value = "未命名变量和模式", desc = "使用下划线表示不使用的变量，提高代码可读性")
     public void demonstrateUnnamedVariables() {
         System.out.println("=== 未命名变量和模式演示 (概念展示) ===");
         
@@ -59,7 +59,7 @@ public class PreviewFeaturesDemo {
      * 作用域值演示概念 (Java 21预览特性)
      * 比ThreadLocal更高效的线程局部存储
      */
-    @Java21Feature(value = "作用域值", description = "比ThreadLocal更高效的线程局部存储机制")
+    @Java21Feature(value = "作用域值", desc = "比ThreadLocal更高效的线程局部存储机制")
     public void demonstrateScopedValues() {
         System.out.println("\n=== 作用域值演示 (概念展示) ===");
         
@@ -112,7 +112,7 @@ public class PreviewFeaturesDemo {
      * 外部函数和内存API演示概念 (Java 21预览特性)
      * Foreign Function & Memory API
      */
-    @Java21Feature(value = "外部函数和内存API", description = "安全高效的本地内存访问和外部函数调用")
+    @Java21Feature(value = "外部函数和内存API", desc = "安全高效的本地内存访问和外部函数调用")
     public void demonstrateForeignFunctionAndMemoryAPI() {
         System.out.println("\n=== 外部函数和内存API演示 (概念展示) ===");
         
@@ -182,7 +182,7 @@ public class PreviewFeaturesDemo {
      * 向量API演示概念 (Java 21预览特性)
      * SIMD指令的Java支持
      */
-    @Java21Feature(value = "向量API", description = "利用SIMD指令进行向量化计算，提升数值计算性能")
+    @Java21Feature(value = "向量API", desc = "利用SIMD指令进行向量化计算，提升数值计算性能")
     public void demonstrateVectorAPI() {
         System.out.println("\n=== 向量API演示 (概念展示) ===");
         
@@ -262,7 +262,7 @@ public class PreviewFeaturesDemo {
     /**
      * Java未来发展方向概述
      */
-    @Java21Feature(value = "Java未来发展", description = "Java语言的未来发展方向和技术趋势")
+    @Java21Feature(value = "Java未来发展", desc = "Java语言的未来发展方向和技术趋势")
     public void demonstrateJavaFuture() {
         System.out.println("\n=== Java未来发展方向 ===");
         

@@ -42,7 +42,6 @@ public class DemoRunner {
      */
     private static void runAllDemos() {
         System.out.println("运行所有Java特性演示...\n");
-        
         // 1. 语言特性增强
         printSectionHeader("语言特性增强");
         new LanguageEnhancementsDemo().runAllDemos();

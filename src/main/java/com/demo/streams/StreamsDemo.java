@@ -15,7 +15,7 @@ public class StreamsDemo {
      * 基础Stream操作演示 (Java 8特性)
      * Stream的创建、中间操作和终端操作
      */
-    @Java8Feature(value = "Stream API基础", description = "函数式风格的数据处理管道，支持顺序和并行处理")
+    @Java8Feature(value = "Stream API基础", desc = "函数式风格的数据处理管道，支持顺序和并行处理")
     public void demonstrateBasicStreamOperations() {
         System.out.println("=== Stream API基础操作演示 ===");
         
@@ -61,7 +61,7 @@ public class StreamsDemo {
      * Stream收集器演示 (Java 8特性)
      * Collectors类的各种收集操作
      */
-    @Java8Feature(value = "Stream收集器", description = "Collectors提供各种数据收集和聚合操作")
+    @Java8Feature(value = "Stream收集器", desc = "Collectors提供各种数据收集和聚合操作")
     public void demonstrateStreamCollectors() {
         System.out.println("\n=== Stream收集器演示 ===");
         
@@ -129,7 +129,7 @@ public class StreamsDemo {
      * 并行Stream演示 (Java 8特性)
      * 展示并行处理的能力和注意事项
      */
-    @Java8Feature(value = "并行Stream", description = "利用多核处理器进行并行数据处理")
+    @Java8Feature(value = "并行Stream", desc = "利用多核处理器进行并行数据处理")
     public void demonstrateParallelStreams() {
         System.out.println("\n=== 并行Stream演示 ===");
         
@@ -185,7 +185,7 @@ public class StreamsDemo {
      * Stream新增方法演示 (Java 9特性)
      * takeWhile, dropWhile, ofNullable等新方法
      */
-    @Java9Feature(value = "Stream新增方法", description = "takeWhile, dropWhile, ofNullable等新的Stream操作方法")
+    @Java9Feature(value = "Stream新增方法", desc = "takeWhile, dropWhile, ofNullable等新的Stream操作方法")
     public void demonstrateJava9StreamEnhancements() {
         System.out.println("\n=== Java 9 Stream增强演示 ===");
         
@@ -243,7 +243,7 @@ public class StreamsDemo {
      * Collectors新增方法演示 (Java 9-11特性)
      * filtering, flatMapping等新的收集器
      */
-    @Java9Feature(value = "Collectors增强", description = "filtering, flatMapping等新的收集器方法")
+    @Java9Feature(value = "Collectors增强", desc = "filtering, flatMapping等新的收集器方法")
     public void demonstrateCollectorsEnhancements() {
         System.out.println("\n=== Collectors增强演示 ===");
         
@@ -288,7 +288,7 @@ public class StreamsDemo {
      * Stream.toList()演示 (Java 16特性)
      * 简化的列表收集方法
      */
-    @Java17Feature(value = "Stream.toList()", description = "简化的不可变列表收集方法，无需使用Collectors.toList()")
+    @Java17Feature(value = "Stream.toList()", desc = "简化的不可变列表收集方法，无需使用Collectors.toList()")
     public void demonstrateStreamToList() {
         System.out.println("\n=== Stream.toList()演示 ===");
         
@@ -328,7 +328,7 @@ public class StreamsDemo {
      * 复杂Stream操作综合演示
      * 展示实际应用场景中的Stream处理
      */
-    @Java8Feature(value = "复杂Stream操作", description = "展示Stream在实际业务场景中的综合应用")
+    @Java8Feature(value = "复杂Stream操作", desc = "展示Stream在实际业务场景中的综合应用")
     public void demonstrateComplexStreamOperations() {
         System.out.println("\n=== 复杂Stream操作综合演示 ===");
         

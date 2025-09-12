@@ -18,5 +18,5 @@ public @interface Java9Feature {
     /**
      * 详细说明
      */
-    String description() default "";
+    String desc() default "";
 }

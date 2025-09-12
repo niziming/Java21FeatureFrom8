@@ -19,7 +19,7 @@ public class TextProcessingDemo {
      * String类增强演示 (Java 8特性)
      * String.join()和其他便利方法
      */
-    @Java8Feature(value = "String类增强", description = "String.join()等便利方法，简化字符串操作")
+    @Java8Feature(value = "String类增强", desc = "String.join()等便利方法，简化字符串操作")
     public void demonstrateStringEnhancements() {
         System.out.println("=== String类增强演示 ===");
         
@@ -40,11 +40,11 @@ public class TextProcessingDemo {
         features.put("Java 17", "Records");
         features.put("Java 21", "虚拟线程");
         
-        String featureDescription = features.entrySet().stream()
+        String featuredesc = features.entrySet().stream()
             .map(entry -> entry.getKey() + ": " + entry.getValue())
             .collect(java.util.stream.Collectors.joining(" | "));
         
-        System.out.println("特性描述: " + featureDescription);
+        System.out.println("特性描述: " + featuredesc);
         
         // 字符串分割和处理
         String csvData = "张三,25,工程师;李四,30,设计师;王五,28,产品经理";
@@ -63,7 +63,7 @@ public class TextProcessingDemo {
      * 文本块演示 (Java 17特性)
      * 多行字符串的简洁表示
      */
-    @Java17Feature(value = "文本块", description = "使用三重引号定义多行字符串，保持格式和缩进")
+    @Java17Feature(value = "文本块", desc = "使用三重引号定义多行字符串，保持格式和缩进")
     public void demonstrateTextBlocks() {
         System.out.println("\n=== 文本块演示 ===");
         
@@ -134,7 +134,7 @@ public class TextProcessingDemo {
      * String新增方法演示 (Java 11特性)
      * isBlank(), lines(), strip()等新方法
      */
-    @Java11Feature(value = "String新增方法", description = "isBlank(), lines(), strip(), repeat()等便利方法")
+    @Java11Feature(value = "String新增方法", desc = "isBlank(), lines(), strip(), repeat()等便利方法")
     public void demonstrateStringNewMethods() {
         System.out.println("\n=== String新增方法演示 ===");
         
@@ -189,7 +189,7 @@ public class TextProcessingDemo {
      * 正则表达式增强演示 (Java 8特性)
      * Pattern类的新方法和Stream支持
      */
-    @Java8Feature(value = "正则表达式增强", description = "Pattern类支持Stream操作，更好的文本处理能力")
+    @Java8Feature(value = "正则表达式增强", desc = "Pattern类支持Stream操作，更好的文本处理能力")
     public void demonstrateRegexEnhancements() {
         System.out.println("\n=== 正则表达式增强演示 ===");
         
@@ -248,7 +248,7 @@ public class TextProcessingDemo {
      * 数字格式化演示 (Java 8特性)
      * NumberFormat和DecimalFormat的使用
      */
-    @Java8Feature(value = "数字格式化", description = "NumberFormat和DecimalFormat提供灵活的数字格式化")
+    @Java8Feature(value = "数字格式化", desc = "NumberFormat和DecimalFormat提供灵活的数字格式化")
     public void demonstrateNumberFormatting() {
         System.out.println("\n=== 数字格式化演示 ===");
         
@@ -303,7 +303,7 @@ public class TextProcessingDemo {
      * 文本分析和统计演示
      * 综合运用字符串和正则表达式进行文本分析
      */
-    @Java8Feature(value = "文本分析统计", description = "综合运用字符串处理功能进行文本分析")
+    @Java8Feature(value = "文本分析统计", desc = "综合运用字符串处理功能进行文本分析")
     public void demonstrateTextAnalysis() {
         System.out.println("\n=== 文本分析和统计演示 ===");
         
@@ -380,7 +380,7 @@ public class TextProcessingDemo {
      * 字符串模板演示概念 (Java 21预览特性)
      * 展示字符串插值的概念
      */
-    @Java21Feature(value = "字符串模板概念", description = "字符串模板提供类似其他语言的字符串插值功能")
+    @Java21Feature(value = "字符串模板概念", desc = "字符串模板提供类似其他语言的字符串插值功能")
     public void demonstrateStringTemplatesConcept() {
         System.out.println("\n=== 字符串模板概念演示 ===");
         

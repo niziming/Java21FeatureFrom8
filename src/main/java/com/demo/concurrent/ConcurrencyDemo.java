@@ -18,7 +18,7 @@ public class ConcurrencyDemo {
      * CompletableFuture基础演示 (Java 8特性)
      * 异步编程和链式操作
      */
-    @Java8Feature(value = "CompletableFuture", description = "异步编程框架，支持链式操作和组合")
+    @Java8Feature(value = "CompletableFuture", desc = "异步编程框架，支持链式操作和组合")
     public void demonstrateCompletableFuture() {
         System.out.println("=== CompletableFuture演示 ===");
         
@@ -79,7 +79,7 @@ public class ConcurrencyDemo {
      * CompletableFuture增强演示 (Java 9特性)
      * 超时和延迟执行等新特性
      */
-    @Java9Feature(value = "CompletableFuture增强", description = "新增超时处理、延迟执行等增强功能")
+    @Java9Feature(value = "CompletableFuture增强", desc = "新增超时处理、延迟执行等增强功能")
     public void demonstrateCompletableFutureEnhancements() {
         System.out.println("\n=== CompletableFuture增强演示 ===");
         
@@ -132,7 +132,7 @@ public class ConcurrencyDemo {
      * 虚拟线程演示 (Java 21重要特性)
      * Project Loom的核心功能，轻量级线程
      */
-    @Java21Feature(value = "虚拟线程", description = "Project Loom的轻量级线程，可以创建数百万个线程")
+    @Java21Feature(value = "虚拟线程", desc = "Project Loom的轻量级线程，可以创建数百万个线程")
     public void demonstrateVirtualThreads() {
         System.out.println("\n=== 虚拟线程演示 ===");
         
@@ -271,7 +271,7 @@ public class ConcurrencyDemo {
      * 结构化并发演示 (Java 21预览特性)
      * 管理相关任务的生命周期
      */
-    @Java21Feature(value = "结构化并发", description = "管理相关任务组的生命周期，提供更好的错误处理和资源管理")
+    @Java21Feature(value = "结构化并发", desc = "管理相关任务组的生命周期，提供更好的错误处理和资源管理")
     public void demonstrateStructuredConcurrency() {
         System.out.println("\n=== 结构化并发演示 (概念演示) ===");
         
@@ -335,7 +335,7 @@ public class ConcurrencyDemo {
      * ForkJoinPool增强演示 (Java 8特性)
      * 工作窃取算法和并行计算
      */
-    @Java8Feature(value = "ForkJoinPool", description = "基于工作窃取算法的并行计算框架")
+    @Java8Feature(value = "ForkJoinPool", desc = "基于工作窃取算法的并行计算框架")
     public void demonstrateForkJoinPool() {
         System.out.println("\n=== ForkJoinPool演示 ===");
         
@@ -432,7 +432,7 @@ public class ConcurrencyDemo {
      * 原子操作演示 (Java 8特性)
      * 原子类的增强方法
      */
-    @Java8Feature(value = "原子操作增强", description = "原子类新增updateAndGet、accumulateAndGet等方法")
+    @Java8Feature(value = "原子操作增强", desc = "原子类新增updateAndGet、accumulateAndGet等方法")
     public void demonstrateAtomicOperations() {
         System.out.println("\n=== 原子操作增强演示 ===");
         

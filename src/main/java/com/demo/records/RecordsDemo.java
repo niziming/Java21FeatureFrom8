@@ -14,7 +14,7 @@ public class RecordsDemo {
      * 基础Record演示 (Java 17特性)
      * Record提供简洁的数据载体类定义
      */
-    @Java17Feature(value = "Record类", description = "简洁的不可变数据载体类，自动生成构造器、getter、equals、hashCode和toString")
+    @Java17Feature(value = "Record类", desc = "简洁的不可变数据载体类，自动生成构造器、getter、equals、hashCode和toString")
     public void demonstrateBasicRecords() {
         System.out.println("=== 基础Record演示 ===");
         
@@ -54,7 +54,7 @@ public class RecordsDemo {
      * 复杂Record演示
      * 展示Record的高级用法
      */
-    @Java17Feature(value = "复杂Record用法", description = "Record支持泛型、嵌套、验证等高级特性")
+    @Java17Feature(value = "复杂Record用法", desc = "Record支持泛型、嵌套、验证等高级特性")
     public void demonstrateComplexRecords() {
         System.out.println("\n=== 复杂Record演示 ===");
         
@@ -99,7 +99,7 @@ public class RecordsDemo {
     /**
      * Record与传统类对比演示
      */
-    @Java17Feature(value = "Record vs 传统类", description = "对比Record与传统类的代码简洁性和功能")
+    @Java17Feature(value = "Record vs 传统类", desc = "对比Record与传统类的代码简洁性和功能")
     public void demonstrateRecordVsTraditionalClass() {
         System.out.println("\n=== Record vs 传统类对比 ===");
         
@@ -139,7 +139,7 @@ public class RecordsDemo {
     /**
      * Record在函数式编程中的应用
      */
-    @Java17Feature(value = "Record函数式编程", description = "Record与Stream、Optional等函数式编程的结合")
+    @Java17Feature(value = "Record函数式编程", desc = "Record与Stream、Optional等函数式编程的结合")
     public void demonstrateRecordWithFunctionalProgramming() {
         System.out.println("\n=== Record与函数式编程结合 ===");
         
@@ -231,7 +231,7 @@ public class RecordsDemo {
     /**
      * 泛型Record
      */
-    public record GenericContainer<T>(T value, String description) {}
+    public record GenericContainer<T>(T value, String desc) {}
 
     /**
      * 地址记录
