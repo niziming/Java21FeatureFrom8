@@ -14,12 +14,16 @@ import java.util.ArrayList;
  */
 public class ConcurrencyDemo {
 
+    static void main() {
+        demonstrateCompletableFuture();
+    }
+
     /**
      * CompletableFuture基础演示 (Java 8特性)
      * 异步编程和链式操作
      */
     @Java8Feature(value = "CompletableFuture", desc = "异步编程框架，支持链式操作和组合")
-    public void demonstrateCompletableFuture() {
+    public static void demonstrateCompletableFuture() {
         System.out.println("=== CompletableFuture演示 ===");
         
         // 基础异步操作
@@ -32,7 +36,7 @@ public class ConcurrencyDemo {
             }
             return "任务1完成";
         });
-        
+
         // 链式操作
         CompletableFuture<String> future2 = future1.thenApply(result -> {
             System.out.println("处理任务1结果: " + result);

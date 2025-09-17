@@ -18,7 +18,8 @@ public class CollectionsDemo {
         // demonstrateConvenienceMethods();
         // demonstrateConcurrentHashMapEnhancements();
         // demonstrateToArrayEnhancement();
-        demonstrateStreamCollectionOperations();
+        // demonstrateStreamCollectionOperations();
+        demonstrateComparatorEnhancements();
     }
 
     /**
@@ -260,10 +261,10 @@ public class CollectionsDemo {
                         Employee::getDepartment,
                         java.util.stream.Collectors.averagingDouble(Employee::getSalary)
                 ));
-        employees.stream()
+        Map<Integer, String> collect = employees.stream()
                 .collect(Collectors.groupingBy(Employee::getAge, Collectors.mapping(Employee::getName, Collectors.joining())
-                )
-        );
+                        )
+                );
 
         System.out.println("\n各部门平均工资:");
         avgSalaryByDept.forEach((dept, avgSalary) ->
@@ -284,7 +285,7 @@ public class CollectionsDemo {
      * Comparator接口的增强
      */
     @Java8Feature(value = "Comparator增强", desc = "Comparator接口新增多种便利的比较和排序方法")
-    public void demonstrateComparatorEnhancements() {
+    public static void demonstrateComparatorEnhancements() {
         System.out.println("\n=== Comparator增强演示 ===");
 
         List<Employee> employees = Arrays.asList(
@@ -299,7 +300,6 @@ public class CollectionsDemo {
         sortedByAge.sort(Comparator.comparing(Employee::getAge));
         System.out.println("按年龄排序:");
         sortedByAge.forEach(emp -> System.out.println("  " + emp.getName() + " - " + emp.getAge() + "岁"));
-
         // 按工资倒序排序
         List<Employee> sortedBySalaryDesc = new ArrayList<>(employees);
         sortedBySalaryDesc.sort(Comparator.comparing(Employee::getSalary).reversed());
