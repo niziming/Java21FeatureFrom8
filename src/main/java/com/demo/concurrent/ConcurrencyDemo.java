@@ -1,6 +1,8 @@
 package com.demo.concurrent;
 
+import com.demo.Result;
 import com.demo.annotations.*;
+
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.time.Duration;
@@ -14,8 +16,65 @@ import java.util.ArrayList;
  */
 public class ConcurrencyDemo {
 
-    static void main() {
-        demonstrateCompletableFuture();
+    static void main() throws InterruptedException {
+        // demonstrateCompletableFutureEnhancements();
+        // demonstrateVirtualThreads();
+        practiceVirtualThreads();
+    }
+
+    static void practiceVirtualThreads() throws InterruptedException {
+        try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
+            List<Callable<String>> jobs = new ArrayList<>();
+
+            for (int i = 0; i < 100; i++) {
+                int finalI = i;
+                jobs.add(() -> {
+                    Thread.sleep(100);
+                    return "任务" + finalI + "完成";
+                });
+            }
+
+            List<Future<String>> futures = executor.invokeAll(jobs);
+            for (Future<String> future : futures) {
+                try {
+                    String result = future.get();
+                    System.out.println("任务完成: " + result);
+                } catch (Exception e) {
+                    System.err.println("任务失败: " + e.getMessage());
+                }
+            }
+        }
+
+        Thread virThread = Thread.ofVirtual().name("虚拟线程").start(() -> {
+            System.out.println("虚拟线程启动" + Thread.currentThread());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                throw new RuntimeException(e);
+            }
+            System.out.println("完成");
+        });
+
+        virThread.join();
+
+
+        System.out.println("每个任务创建一个虚拟线程newVirtualThreadPerTaskExecutor");
+        try (ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();){
+
+            Future<String> future = executorService.submit(() -> {
+                System.out.println("虚拟线程执行2");
+                return "任务完成";
+            });
+            String s = future.get();
+            System.out.println("s = " + s);
+
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     /**
@@ -77,6 +136,49 @@ public class ConcurrencyDemo {
         } catch (Exception e) {
             System.err.println("组合失败: " + e.getMessage());
         }
+
+        System.out.println("=== CompletableFuture实战 ===");
+        CompletableFuture<String> job = CompletableFuture.supplyAsync(() -> "开启一个异步任务-有返回结果");
+        CompletableFuture<Void> job1 = CompletableFuture.runAsync(() -> System.out.println("开启一个异步任务-无返回结果"));
+        CompletableFuture<String> job2 = job.thenApply(result -> ">>>>>>: " + result);
+        job1.thenApply(result -> "job1处理结果: " + result);
+        String s = null;
+        try {
+            s = job2.get();
+            System.out.println("job2结果 = " + s);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+        job1.thenAccept(result -> System.out.println("job1结果 = " + result));
+        job1.thenRun(() -> System.out.println("job1链式调用无返回值1"))
+                .thenRun(() -> System.out.println("job1链式调用无返回值2"));
+        job1.thenCombine(job2,
+                (result1, result2) -> "job1和job2结果: " + result1 + " + " + result2)
+                .thenAccept(result -> System.out.println("job1和job2结果 = " + result));
+
+        CompletableFuture.allOf(job1, job2, task1, task2).thenRun(
+            () -> {
+                try {
+                    String s1 = job2.get();
+                    String s2 = job2.get();
+                    String s3 = task1.get();
+                    String s4 = task2.get();
+                    System.out.println("所有任务完成");
+                    System.out.println("所有任务结果: " + s1 + " + " + s2 + " + " + s3 + " + " + s4);
+                } catch (ExecutionException | InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+
+        job1.thenAcceptAsync(new Result()::setData).exceptionally(
+                throwable -> {
+                    System.out.println("任务执行异常: " + throwable.getMessage());
+                    return null;
+                }
+        );
+
     }
 
     /**
@@ -84,9 +186,28 @@ public class ConcurrencyDemo {
      * 超时和延迟执行等新特性
      */
     @Java9Feature(value = "CompletableFuture增强", desc = "新增超时处理、延迟执行等增强功能")
-    public void demonstrateCompletableFutureEnhancements() {
+    public static void demonstrateCompletableFutureEnhancements() {
         System.out.println("\n=== CompletableFuture增强演示 ===");
-        
+        CompletableFuture<Result<String>> handle = CompletableFuture.supplyAsync(() -> {
+                    System.out.println("我执行了 = ");
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    return "1";
+                }, CompletableFuture.delayedExecutor(2, TimeUnit.SECONDS))
+                .orTimeout(1, TimeUnit.SECONDS)
+                .handle((result, throwable) -> {
+                    if (throwable != null) {
+                        System.out.println("异常");
+                        return Result.fail();
+                    }
+                    System.out.println("正常");
+                    return Result.succ(result);
+                });
+
+
         // 带超时的异步操作
         CompletableFuture<String> timeoutFuture = CompletableFuture.supplyAsync(() -> {
             try {
@@ -114,7 +235,12 @@ public class ConcurrencyDemo {
         CompletableFuture<Void> delayedFuture = CompletableFuture
             .runAsync(() -> System.out.println("延迟500ms后执行"), 
                      CompletableFuture.delayedExecutor(500, TimeUnit.MILLISECONDS));
-        
+        try {
+            Void unused = delayedFuture.get();
+        } catch (ExecutionException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
         // 默认值处理
         CompletableFuture<String> futureWithDefault = CompletableFuture
             .supplyAsync(() -> {
@@ -137,9 +263,9 @@ public class ConcurrencyDemo {
      * Project Loom的核心功能，轻量级线程
      */
     @Java21Feature(value = "虚拟线程", desc = "Project Loom的轻量级线程，可以创建数百万个线程")
-    public void demonstrateVirtualThreads() {
+    public static void demonstrateVirtualThreads() {
         System.out.println("\n=== 虚拟线程演示 ===");
-        
+
         // 创建虚拟线程
         Thread virtualThread = Thread.ofVirtual().name("虚拟线程-1").start(() -> {
             System.out.println("虚拟线程运行中: " + Thread.currentThread());
@@ -202,7 +328,7 @@ public class ConcurrencyDemo {
     /**
      * 虚拟线程与传统线程性能对比
      */
-    private void demonstrateVirtualVsTraditionalThreads() {
+    private static void demonstrateVirtualVsTraditionalThreads() {
         System.out.println("\n--- 虚拟线程 vs 传统线程性能对比 ---");
         
         int taskCount = 1000;
@@ -479,7 +605,7 @@ public class ConcurrencyDemo {
     /**
      * 运行所有并发演示
      */
-    public void runAllDemos() {
+    public void runAllDemos()  {
         System.out.println("开始并发编程增强演示...\n");
         
         demonstrateCompletableFuture();
